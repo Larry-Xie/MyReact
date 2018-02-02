@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 
-import Home from './page/Home/Home';
-import About from './page/About/About';
-import Detail from './page/Detail/Detail';
+import Home from './views/Home/Home';
+import About from './views/About/About';
+import Detail from './views/Detail/Detail';
 import logo from './logo.svg';
 import './App.css';
 
