@@ -5,7 +5,7 @@ import Home from './views/Home/Home';
 import About from './views/About/About';
 import Detail from './views/Detail/Detail';
 import logo from './logo.svg';
-import './App.css';
+import './App.less';
 
 class Nav extends Component {
     render() {
