@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { NavLink, Route, Switch } from 'react-router-dom';
+import { NavLink, Redirect, Route, Switch } from 'react-router-dom';
 
-import Home from './Home/Home';
-import About from './About/About';
-import Detail from './Detail/Detail';
+import Products from './Products/Products';
+import History from './History/History';
 import './Shell.less';
 
 class Shell extends Component {
@@ -23,7 +22,7 @@ class Shell extends Component {
                 <div className="cwc-subnavbar">
                     <ul className="pull-left">
                         <li className="subnavbar-item">
-                            <NavLink className="subnavbar-item-tab" activeClassName="active" to='/'>Products</NavLink>
+                            <NavLink className="subnavbar-item-tab" activeClassName="active" to='/products'>Products</NavLink>
                         </li>
                         <li className="subnavbar-item">
                             <NavLink className="subnavbar-item-tab" activeClassName="active" to='/detail'>History</NavLink>
@@ -33,9 +32,9 @@ class Shell extends Component {
                 {/* Main Content */}
                 <main>
                     <Switch>
-                        <Route exact path='/' component={Home} />
-                        <Route path='/detail' component={Detail} />
-                        <Route path='/about' component={About} />
+                        <Route path='/products' component={Products} />
+                        <Route path='/detail' component={History} />
+                        <Redirect from="/" to="products" />
                     </Switch>
                 </main>
             </div>

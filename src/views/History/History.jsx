@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 
-class About extends Component {
+class History extends Component {
     render() {
         return ( 
             <h2>
-                This is about Page.
+                This is History Page.
             </h2>
         );
     }
 }
 
-export default About;
+export default History;
