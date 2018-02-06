@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 
-import Home from './views/Home/Home';
 import About from './views/About/About';
 import Detail from './views/Detail/Detail';
+import Home from './views/Home/Home';
+import Shell from './views/Shell';
 import logo from './logo.svg';
 import './App.less';
 
@@ -41,8 +42,7 @@ class App extends Component {
     render() {
         return ( 
             <div className="app">
-                <Nav />
-                <Main />
+                <Shell />
             </div>
         );
     }
