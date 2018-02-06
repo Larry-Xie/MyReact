@@ -1,3 +1,4 @@
+// Copyright © Citrix Systems, Inc.  All rights reserved.
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';

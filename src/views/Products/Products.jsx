@@ -1,3 +1,4 @@
+// Copyright © Citrix Systems, Inc.  All rights reserved.
 import React, {Component} from 'react';
 
 class Products extends Component {

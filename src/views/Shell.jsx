@@ -1,3 +1,4 @@
+// Copyright © Citrix Systems, Inc.  All rights reserved.
 import React, { Component } from 'react';
 import { NavLink, Redirect, Route, Switch } from 'react-router-dom';
 
