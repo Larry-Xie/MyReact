@@ -4,10 +4,23 @@ import React, { Component } from 'react';
 import Shell from './views/Shell';
 import './App.less';
 
+class Navbar extends Component {
+    render() {
+        return (
+            <div className="app-navbar">
+                Citrix Cloud
+            </div>
+        );
+    }
+}
+
 class App extends Component {
     render() {
-        return ( 
-            <Shell />
+        return (
+            <div>
+                <Navbar />
+                <Shell />
+            </div>
         );
     }
 }
