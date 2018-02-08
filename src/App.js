@@ -1,7 +1,7 @@
 // Copyright © Citrix Systems, Inc.  All rights reserved.
 import React, { Component } from 'react';
 
-import Shell from './views/Shell';
+import Shell from './components/Shell';
 import './App.less';
 
 class Navbar extends Component {
