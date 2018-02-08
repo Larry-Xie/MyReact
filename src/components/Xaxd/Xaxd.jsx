@@ -2,9 +2,9 @@
 import React, { Component } from 'react';
 import { NavLink, Redirect, Route, Switch } from 'react-router-dom';
 
-import Status from '../Xaxd/Status';
-import Usage from '../Xaxd/Usage';
-import Users from '../Xaxd/Users';
+import Status from './Status';
+import Usage from './Usage';
+import Users from './Users';
 
 class Xaxd extends Component {
     render() {

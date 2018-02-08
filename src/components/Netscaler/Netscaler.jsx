@@ -1,7 +1,7 @@
 // Copyright © Citrix Systems, Inc.  All rights reserved.
 import React, { Component } from 'react';
 
-import Allocated from '../Netscaler/Allocated';
+import Allocated from './Allocated';
 
 class Netscaler extends Component {
     render() {

@@ -2,9 +2,9 @@
 import React, { Component } from 'react';
 import { NavLink, Redirect, Route, Switch } from 'react-router-dom';
 
-import Cpsm from './Cpsm';
-import Netscaler from './Netscaler';
-import Xaxd from './Xaxd';
+import Cpsm from '../Cpsm/Cpsm';
+import Netscaler from '../Netscaler/Netscaler';
+import Xaxd from '../Xaxd/Xaxd';
 import './Products.less';
 
 class Products extends Component {

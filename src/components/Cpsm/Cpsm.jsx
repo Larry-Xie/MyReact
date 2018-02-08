@@ -2,9 +2,9 @@
 import React, { Component } from 'react';
 import { NavLink, Redirect, Route, Switch } from 'react-router-dom';
 
-import Deployment from '../Cpsm/Deployment';
-import Services from '../Cpsm/Services';
-import Customers from '../Cpsm/Customers';
+import Deployment from './Deployment';
+import Services from './Services';
+import Customers from './Customers';
 
 class Cpsm extends Component {
     render() {
