@@ -24,10 +24,10 @@ class Shell extends Component {
                     <div className="cwc-subnavbar">
                         <ul className="pull-left">
                             <li className="subnavbar-item">
-                                <NavLink className="subnavbar-item-tab" activeClassName="active" to='/products'>Products</NavLink>
+                                <NavLink className="subnavbar-item-tab" activeClassName="active" to="/products">Products</NavLink>
                             </li>
                             <li className="subnavbar-item">
-                                <NavLink className="subnavbar-item-tab" activeClassName="active" to='/detail'>History</NavLink>
+                                <NavLink className="subnavbar-item-tab" activeClassName="active" to="/history">History</NavLink>
                             </li>
                         </ul>
                     </div>
@@ -35,8 +35,8 @@ class Shell extends Component {
                 {/* Main Content */}
                 <div className="main-content">
                     <Switch>
-                        <Route path='/products' component={Products} />
-                        <Route path='/detail' component={History} />
+                        <Route path="/products" component={Products} />
+                        <Route path="/history" component={History} />
                         <Redirect from="/" to="products" />
                     </Switch>
                 </div>
