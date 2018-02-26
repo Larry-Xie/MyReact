@@ -1,14 +1,14 @@
 // Copyright © Citrix Systems, Inc.  All rights reserved.
 import React, {Component} from 'react';
 
-class Allocated extends Component {
+class CpsmCustomers extends Component {
     render() {
         return ( 
             <h2>
-                This is Allocated Page.
+                This is CpsmCustomers Page.
             </h2>
         );
     }
 }
 
-export default Allocated;
+export default CpsmCustomers;

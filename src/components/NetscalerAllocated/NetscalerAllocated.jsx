@@ -1,14 +1,14 @@
 // Copyright © Citrix Systems, Inc.  All rights reserved.
 import React, {Component} from 'react';
 
-class Services extends Component {
+class NetscalerAllocated extends Component {
     render() {
         return ( 
             <h2>
-                This is Services Page.
+                This is NetscalerAllocated Page.
             </h2>
         );
     }
 }
 
-export default Services;
+export default NetscalerAllocated;

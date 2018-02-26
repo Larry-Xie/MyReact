@@ -1,14 +1,14 @@
 // Copyright © Citrix Systems, Inc.  All rights reserved.
 import React, {Component} from 'react';
 
-class Usage extends Component {
+class CpsmServices extends Component {
     render() {
         return ( 
             <h2>
-                This is Usage Page.
+                This is CpsmServices Page.
             </h2>
         );
     }
 }
 
-export default Usage;
+export default CpsmServices;

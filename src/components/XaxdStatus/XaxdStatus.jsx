@@ -1,14 +1,14 @@
 // Copyright © Citrix Systems, Inc.  All rights reserved.
 import React, {Component} from 'react';
 
-class Users extends Component {
+class XaxdStatus extends Component {
     render() {
         return ( 
             <h2>
-                This is Users Page.
+                This is XaxdStatus Page.
             </h2>
         );
     }
 }
 
-export default Users;
+export default XaxdStatus;

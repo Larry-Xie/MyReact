@@ -1,14 +1,14 @@
 // Copyright © Citrix Systems, Inc.  All rights reserved.
 import React, {Component} from 'react';
 
-class Status extends Component {
+class CpsmDeployment extends Component {
     render() {
         return ( 
             <h2>
-                This is Status Page.
+                This is CpsmDeployment Page.
             </h2>
         );
     }
 }
 
-export default Status;
+export default CpsmDeployment;

@@ -1,13 +1,13 @@
 // Copyright © Citrix Systems, Inc.  All rights reserved.
 import React, { Component } from 'react';
 
-import Allocated from './Allocated';
+import NetscalerAllocated from '../NetscalerAllocated/NetscalerAllocated';
 
 class Netscaler extends Component {
     render() {
         return (
             <div className="products-content-container">
-                <Allocated />
+                <NetscalerAllocated />
             </div>
         );
     }

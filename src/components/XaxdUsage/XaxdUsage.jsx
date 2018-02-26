@@ -1,14 +1,14 @@
 // Copyright © Citrix Systems, Inc.  All rights reserved.
 import React, {Component} from 'react';
 
-class Deployment extends Component {
+class XaxdUsage extends Component {
     render() {
         return ( 
             <h2>
-                This is Deployment Page.
+                This is XaxdUsage Page.
             </h2>
         );
     }
 }
 
-export default Deployment;
+export default XaxdUsage;

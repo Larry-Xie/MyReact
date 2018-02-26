@@ -2,9 +2,9 @@
 import React, { Component } from 'react';
 import { NavLink, Redirect, Route, Switch } from 'react-router-dom';
 
-import Status from './Status';
-import Usage from './Usage';
-import Users from './Users';
+import XaxdStatus from '../XaxdStatus/XaxdStatus';
+import XaxdUsage from '../XaxdUsage/XaxdUsage';
+import XaxdUsers from '../XaxdUsers/XaxdUsers';
 
 class Xaxd extends Component {
     render() {
@@ -17,9 +17,9 @@ class Xaxd extends Component {
                 </div>
                 <div className="products-content-container">
                     <Switch>
-                        <Route path={`${this.props.match.url}/status`} component={Status} />
-                        <Route path={`${this.props.match.url}/usage`} component={Usage} />
-                        <Route path={`${this.props.match.url}/users`} component={Users} />
+                        <Route path={`${this.props.match.url}/status`} component={XaxdStatus} />
+                        <Route path={`${this.props.match.url}/usage`} component={XaxdUsage} />
+                        <Route path={`${this.props.match.url}/users`} component={XaxdUsers} />
                         <Redirect from={`${this.props.match.url}`} to={`${this.props.match.url}/status`} />
                     </Switch>
                 </div>
