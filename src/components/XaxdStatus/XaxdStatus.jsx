@@ -1,5 +1,6 @@
 // Copyright © Citrix Systems, Inc.  All rights reserved.
 import React, { Component } from 'react';
+import moment from 'moment';
 
 import { licensing } from '../../services/licensing';
 import { timeZoneConverterService } from '../../services/time-converter';
@@ -54,8 +55,9 @@ class XaxdStatus extends Component {
             featureIndex;
 
         for (let [index, server] of licenseServers.entries()) {
-            server.modifiedDate = server.lastPhoningHomeTime ?
-                timeZoneConverterService.convertTimeZone(server.lastPhoningHomeTime).toString() : null;
+            server.modifiedDate = server.lastPhoningHomeTime &&
+                moment(timeZoneConverterService.convertTimeZone(server.lastPhoningHomeTime))
+                .format('MMM DD, YYYY HH:mm:ss').toString();
 
             server.infoCount = 0;
             server.showPhoningHomeWarning = false;
