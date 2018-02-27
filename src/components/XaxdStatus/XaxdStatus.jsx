@@ -8,10 +8,10 @@ import './XaxdStatus.less';
 const Row = ({ hostId, isPhoningHome, fqdn, modifiedDate, isLicenseServerFree }) => (
     <div className="table-row">
         <div>{hostId}</div>
-        <div>{isPhoningHome}</div>
+        <div>{isPhoningHome.toString()}</div>
         <div>{fqdn}</div>
         <div>{modifiedDate}</div>
-        <div>{isLicenseServerFree}</div>
+        <div>{isLicenseServerFree.toString()}</div>
     </div>
 );
 
@@ -54,11 +54,8 @@ class XaxdStatus extends Component {
             featureIndex;
 
         for (let [index, server] of licenseServers.entries()) {
-            /** TODO: There is an error with convertTimeZone function.
             server.modifiedDate = server.lastPhoningHomeTime ?
-                timeZoneConverterService.convertTimeZone(server.lastPhoningHomeTime) : null;
-            **/
-            server.modifiedDate = server.lastPhoningHomeTime;
+                timeZoneConverterService.convertTimeZone(server.lastPhoningHomeTime).toString() : null;
 
             server.infoCount = 0;
             server.showPhoningHomeWarning = false;
@@ -176,7 +173,7 @@ class XaxdStatus extends Component {
     }
 
     render() {
-        const rows = this.state.servers.map((server) => <Row {...server} />);
+        const rows = this.state.servers.map((server) => <Row key={server.hostId.toString()} {...server} />);
         return (
             <div className="status-container">
                 <div className="table-header">

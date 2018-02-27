@@ -6,9 +6,26 @@ function getLicenseServer() {
         "orgId": "int3746731a",
         "licenseServersStatus": [
             {
+                'ccuFeatureStatistics': null,
+                'daysToExpire': 95,
+                'fqdn': "Csp4Sev1Pro.azxd77.local",
+                'hostId': "CSP4SEV1PRO",
+                'isCcu': false,
+                'isCompliant': false,
+                'isEverReported': true,
+                'isExpired': false,
+                'isFoundInBackOffice': true,
+                'isLicenseServerFree': false,
+                'isNonCspLicenseInstalled': false,
+                'isPhoningHome': false,
+                'lastPhoningHomeTime': '2016-07-08T00:03:36.00-04:00',
+                'licenseExpirationDate': '2018-06-03T00:00:00.00+00:00',
+                'linkedCustomerList': null
+            },
+            {
                 "hostId": "CTXLIC1",
                 "fqdn": "CTXLIC1.Baidu.com",
-                "lastPhoningHomeTime": "12/30/2015 12:21:15",
+                "lastPhoningHomeTime": "2016-05-06T00:03:36.00-04:00",
                 "isPhoningHome": true,
                 "isFoundInBackOffice": true,
                 "isEverReported": true,
@@ -17,15 +34,16 @@ function getLicenseServer() {
                 "isNonCspLicenseInstalled": false,
                 "isCcu": false,
                 "isExpired": false,
-                "licenseExpirationDate": null,
+                "licenseExpirationDate": '2016-05-01T00:03:36.00-04:00',
                 "daysToExpire": null,
                 "ccuFeatureStatistics": null,
-                "linkedCustomerList": null
+                "linkedCustomerList": null,
+
             },
             {
                 "hostId": "CTXLIC2",
                 "fqdn": "CTXLIC2.Taobao.com",
-                "lastPhoningHomeTime": "12/30/2015 10:21:15",
+                "lastPhoningHomeTime": "2016-09-09T00:03:36.00-04:00",
                 "isPhoningHome": true,
                 "isFoundInBackOffice": false,
                 "isEverReported": true,
@@ -34,7 +52,7 @@ function getLicenseServer() {
                 "isNonCspLicenseInstalled": false,
                 "isCcu": false,
                 "isExpired": false,
-                "licenseExpirationDate": null,
+                "licenseExpirationDate": '2016-09-01T00:03:36.00-04:00',
                 "daysToExpire": null,
                 "ccuFeatureStatistics": null,
                 "linkedCustomerList": null
