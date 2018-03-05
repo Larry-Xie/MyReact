@@ -1,9 +1,10 @@
 // Copyright © Citrix Systems, Inc.  All rights reserved.
 import React, { Component } from 'react';
-import moment from 'moment';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import { licensing } from '../../services/licensing';
-import { timeZoneConverterService } from '../../services/time-converter';
+import * as xaxdStatusActions from '../../store/xaxdStatus/actions';
+import * as xaxdStatusSelectors from '../../store/xaxdStatus/reducer';
 import './XaxdStatus.less';
 
 const Row = ({ hostId, isPhoningHome, fqdn, modifiedDate, isLicenseServerFree }) => (
@@ -19,18 +20,12 @@ const Row = ({ hostId, isPhoningHome, fqdn, modifiedDate, isLicenseServerFree })
 class XaxdStatus extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            isEmpty: false,
-            servers: [],
-        };
         this.compareBy.bind(this);
         this.sortBy.bind(this);
-        this.processStatusData.bind(this);
     }
 
-    componentWillMount() {
-        const data = licensing.getLicenseServer();
-        this.processStatusData(data);
+    componentDidMount() {
+        this.props.dispatch(xaxdStatusActions.fetchXaxdStatusData({}));
     }
 
     compareBy(key) {
@@ -46,7 +41,7 @@ class XaxdStatus extends Component {
         arrayCopy.sort(this.compareBy(key));
         this.setState({ servers: arrayCopy });
     }
-
+/*
     processStatusData(data) {
         let licenseServers = data.licenseServersStatus;
 
@@ -122,7 +117,7 @@ class XaxdStatus extends Component {
             servers: licenseServers
         })
     }
-
+*/
     chooseFreeServer(row) {
         var self = this;
         if (!row.isLicenseServerFree) {
@@ -144,38 +139,8 @@ class XaxdStatus extends Component {
         }
     }
 
-    /**
-        TODO: Try to remove this function.
-    **/
-    matchFeatureId(featureName) {
-        let featureIndex = 0;
-        switch (featureName) {
-            case 'MPS_ADV_CCU':
-                featureIndex = 0;
-                break;
-            case 'MPS_PLT_CCU':
-                featureIndex = 1;
-                break;
-            case 'XDS_PLT_CCS':
-                featureIndex = 2;
-                break;
-            case 'XDS_STD_CCS':
-                featureIndex = 3;
-                break;
-            default:
-                featureIndex = 4;
-        }
-        return featureIndex;
-    }
-
-    filterFeatureId(ccuFeatureStatistics) {
-        var supportedFeatureIdList = ['MPS_ENT_CCU', 'MPS_ADV_CCU', 'MPS_PLT_CCU', 'XDS_PLT_CCS', 'XDS_STD_CCS'];
-        var filteredList = ccuFeatureStatistics.filter((item) => supportedFeatureIdList.indexOf(item.featureId) !== -1);
-        return filteredList;
-    }
-
     render() {
-        const rows = this.state.servers.map((server) => <Row key={server.hostId.toString()} {...server} />);
+        const rows = this.props.servers.map((server) => <Row key={server.hostId.toString()} {...server} />);
         return (
             <div className="status-container">
                 <div className="table-header">
@@ -191,4 +156,16 @@ class XaxdStatus extends Component {
     }
 }
 
-export default XaxdStatus;
+XaxdStatus.propTypes = {
+    isEmpty: PropTypes.bool
+}
+
+// Always use selectors here and avoid accessing the state directly
+function mapStateToProps(state) {
+    return {
+        servers: xaxdStatusSelectors.getLicenseServer(state),
+        isEmpty: xaxdStatusSelectors.getIsEmpty(state)
+    }
+}
+
+export default connect(mapStateToProps)(XaxdStatus);

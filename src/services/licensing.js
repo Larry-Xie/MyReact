@@ -270,15 +270,17 @@ const licenseUsageData = {
     ]
 }
 
-function getLicenseServer() {
-    return licenseServersData;
+class LicensingService {
+    
+    getLicenseServer() {
+        return licenseServersData;
+    }
+    
+    getLicenseUsage() {
+        return licenseUsageData;
+    }
+
 }
 
-function getLicenseUsage() {
-    return licenseUsageData;
-}
 
-export let licensing = {
-    getLicenseServer: getLicenseServer,
-    getLicenseUsage: getLicenseUsage
-};
+export default new LicensingService();
