@@ -3,32 +3,37 @@
 import * as types from './actionTypes';
 import licensingService from '../../services/licensing';
 
-// eslint-disable-next-line
-function requestXaxdStatusData(xaxdStatus) {
+function requestXaxdStatusData() {
     return ({
-        type: types.XAXD_STATUS_REQUEST_DATA,
-        xaxdStatus
+        type: types.XAXD_STATUS_REQUEST_DATA
     })
 }
 
-function receiveXaxdStatusData(xaxdStatus, data) {
+function receiveXaxdStatusData(data) {
     return ({
         type: types.XAXD_STATUS_RECEIVE_DATA,
-        xaxdStatus,
         data: data
     })
 }
 
-export function fetchXaxdStatusData(xaxdStatus) {
-    return (dispatch) => {
-        const data = licensingService.getLicenseServer();
-        return dispatch(receiveXaxdStatusData(xaxdStatus, data));
+export function fetchXaxdStatusData() {
+    return async (dispatch) => {
+        dispatch(requestXaxdStatusData());
+        const data = await licensingService.getLicenseServer();
+        return dispatch(receiveXaxdStatusData(data));
     }
 }
 
-export function changeLicenseServerType(licenseServer) {
+export function sortBy(key) {
+    return ({
+        type: types.XAXD_STATUS_SORT,
+        key
+    })
+}
+
+export function changeLicenseServerType(hostId) {
     return ({
         type: types.XAXD_STATUS_LICENSE_SERVER_TYPE_CHANGED,
-        licenseServer
+        hostId
     })
 }

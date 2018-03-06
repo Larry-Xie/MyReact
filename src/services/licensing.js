@@ -271,9 +271,13 @@ const licenseUsageData = {
 }
 
 class LicensingService {
-    
+
     getLicenseServer() {
-        return licenseServersData;
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(licenseServersData);
+            }, 3000);
+        })
     }
     
     getLicenseUsage() {

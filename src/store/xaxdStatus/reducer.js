@@ -4,19 +4,24 @@ import * as types from './actionTypes';
 import Immutable from 'seamless-immutable';
 import moment from 'moment';
 
-import { timeZoneConverterService } from '../../services/time-converter';
+import timeZoneConverterService from '../../services/time-converter';
 
 const initialState = Immutable({
+    isLoading: true,
     isEmpty: false,
     servers: []
 });
 
 export default function reduce(state = initialState, action = {}) {
     switch(action.type) {
+        case types.XAXD_STATUS_SORT:
+            return Object.assign({}, state, sortBy(state, action.key))
+        case types.XAXD_STATUS_REQUEST_DATA:
+            return Object.assign({}, state, {isLoading: true})
         case types.XAXD_STATUS_RECEIVE_DATA:
             return Object.assign({}, state, processStatusData(action.data))
         case types.XAXD_STATUS_LICENSE_SERVER_TYPE_CHANGED:
-            return Object.assign({}, state)
+            return Object.assign({}, state, changeLicenseServerType(state, action.hostId))
         default:
             return state;
     }
@@ -24,6 +29,10 @@ export default function reduce(state = initialState, action = {}) {
 
 export function getLicenseServer(state) {
     return state.xaxdStatus.servers;
+}
+
+export function getIsLoading(state) {
+    return state.xaxdStatus.isLoading;
 }
 
 export function getIsEmpty(state) {
@@ -101,14 +110,15 @@ function processStatusData(data) {
     // }
 
     return {
+        isLoading: false,
         isEmpty: !licenseServers.length,
         servers: licenseServers
     };
 }
 
 /**
-        TODO: Try to remove this function.
-    **/
+    TODO: Try to remove this function.
+**/
 function matchFeatureId(featureName) {
     let featureIndex = 0;
     switch (featureName) {
@@ -134,4 +144,45 @@ function filterFeatureId(ccuFeatureStatistics) {
     var supportedFeatureIdList = ['MPS_ENT_CCU', 'MPS_ADV_CCU', 'MPS_PLT_CCU', 'XDS_PLT_CCS', 'XDS_STD_CCS'];
     var filteredList = ccuFeatureStatistics.filter((item) => supportedFeatureIdList.indexOf(item.featureId) !== -1);
     return filteredList;
+}
+
+function compareBy(key) {
+    return function (a, b) {
+        if (a[key] < b[key]) return -1;
+        if (a[key] > b[key]) return 1;
+        return 0;
+    };
+}
+
+function sortBy(state, key) {
+    let newServers = [...state.servers];
+    newServers.sort(compareBy(key));
+    return { servers: newServers };
+}
+
+function changeLicenseServerType(state, hostId) {
+    let newServers = [...state.servers];
+    for (let server of newServers) {
+        if (server.hostId === hostId) {
+            server.isLicenseServerFree = !server.isLicenseServerFree;
+        }
+    }
+    return { servers: newServers };
+    // if (!row.isLicenseServerFree) {
+    //     return licen.postFreeServer(row.fqdn).then(function () {
+    //         for (var typeIndex = 0; typeIndex < self.servers.length; typeIndex++) {
+    //             if ((self.servers[typeIndex].fqdn === row.fqdn) && (self.servers[typeIndex].index !== row.index)) {
+    //                 self.servers[typeIndex].isLicenseServerFree = true;
+    //             }
+    //         }
+    //     });
+    // } else {
+    //     return this.licensing.deleteFreeServer(row.fqdn).then(function () {
+    //         for (var typeIndex = 0; typeIndex < self.servers.length; typeIndex++) {
+    //             if ((self.servers[typeIndex].fqdn === row.fqdn) && (self.servers[typeIndex].index !== row.index)) {
+    //                 self.servers[typeIndex].isLicenseServerFree = false;
+    //             }
+    //         }
+    //     });
+    // }
 }
