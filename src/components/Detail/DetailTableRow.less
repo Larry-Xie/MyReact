@@ -1,0 +1,74 @@
+// Copyright © Citrix Systems, Inc.  All rights reserved.
+
+@import '../../common/theme-default.less';
+
+.detail-table-row-expire {
+    color: @detail-expiration-red;
+    font-family: @secondary-font-family;
+    font-size: 14px;
+    position: relative;
+    top: -3px;
+    margin-left: 5px;
+}
+
+.detail-table-row-expire-days {
+    color: @detail-expiration-date;
+    font-family: @primary-font-family;
+    font-size: 12px;
+    margin-left: 8px;
+    position: relative;
+    top: -3px;
+}
+
+.detail-table-row-open-container {
+    background: @white;
+    width: 100%;
+    display: inline-block;
+    padding: 0 25px;
+    box-sizing: border-box;
+    margin-top: -3px;
+    margin-bottom: 3px;
+}
+
+.detail-table-row-open {
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    border-top: 1px solid @detail-divider-color;
+    padding: 16px 25px;
+}
+
+.detail-table-row-open-product {
+    float: left;
+    width: 244px;
+    margin-right: 20px;
+}
+
+.detail-table-row-open-feature {
+    float: left;
+    max-width: calc(~'100% - 304px');
+}
+
+.detail-table-row-open-item {
+    color: @detail-column-title;
+    font-family: @primary-font-family;
+    font-size: 14px;
+    line-height: 1.6em;
+    overflow: hidden;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.detail-table-row-open-title {
+    color: @detail-word-color;
+    font-family: @secondary-font-family;
+    font-size: 14px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}

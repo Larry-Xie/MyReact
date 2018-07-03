@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import './common/global.less';
 import './common/theme-default.less';
-import App from './containers/App';
+import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render((

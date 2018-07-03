@@ -1,0 +1,88 @@
+// Copyright © Citrix Systems, Inc.  All rights reserved.
+
+@import '../../common/theme-default.less';
+
+.cpsm-customer-detail-container {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    background: @white;
+    margin-top: -3px;
+}
+
+.cpsm-customer-detail-customer-link {
+    overflow: hidden;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    text-decoration: underline;
+    color: #1671a6;
+    cursor: pointer;
+}
+
+.cpsm-customer-detail-chart-label {
+    float: left;
+    font-size: 14px;
+    font-style: normal;
+    font-family: @primary-font-family;
+    margin-top: 15px;
+    margin-left: 3%;
+    max-width: 12%;
+    overflow: hidden;
+}
+
+.cpsm-customer-detail-chart-label-text {
+    line-height: 20px;
+    margin-bottom: 15px;
+
+    a {
+        color: #1671a6;
+        text-decoration: underline;
+
+        &:hover {
+            color: #1671a6;
+            text-decoration: none;
+        }
+
+        &:focus {
+            color: #1671a6;
+            text-decoration: none;
+        }
+    }
+}
+
+.cpsm-customer-detail-service-link {
+    overflow: hidden;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    color: #1671a6;
+    cursor: pointer;
+}
+
+.cpsm-customer-detail-text-line {
+    height: 20px;
+    margin-bottom: 15px;
+}
+
+.cpsm-customer-detail-unit-label {
+    font-size: 14px;
+    color: #8995AB;
+}
+
+.cpsm-customer-detail-add-underline {
+    text-decoration: underline;
+}
+
+.cpsm-customer-detail-bar-stack {
+    float: left;
+    width: 75%;
+    margin-top: 15px;
+    margin-left: 5%;
+
+    svg {
+        overflow: visible;
+    }
+}

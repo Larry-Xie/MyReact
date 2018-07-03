@@ -1,0 +1,110 @@
+// Copyright © Citrix Systems, Inc.  All rights reserved.
+@import '../../common/theme-default.less';
+@import '../../common/global.less';
+
+.netscaler-allocated-table-row-middle-text {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.netscaler-allocated-table-row-small-text {
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.netscaler-allocated-table-row-container {
+    background-color: #fff;
+    border: 1px solid #E7E9E9;
+    border-left: 4px solid #69c896;
+    border-radius: 3px;
+    margin-bottom: 4px;
+}
+
+.netscaler-allocated-table-row-container-expand {
+    border-bottom-color: #C5CAD0;
+    border-top-color: #C5CAD0;
+    border-right-color: #C5CAD0;
+}
+
+.netscaler-allocated-table-row-container-error {
+    border-left: 4px solid #CF2800;
+}
+
+.netscaler-allocated-table-row-container-warning {
+    border-left: 4px solid #EEA848;
+}
+
+.netscaler-allocated-table-row {
+    cursor: pointer;
+    height: 70px;
+    padding: 16px 24px;
+    display: flex;
+    box-sizing: border-box;
+
+    > div {
+        font-size: 14px;
+        line-height: 38px;
+        color: #485264;
+        font-family: @primary-font-family;
+        .overflow-ellipsis;
+    }
+}
+
+.netscaler-allocated-table-row-hostId-name {
+    .netscaler-allocated-table-row-middle-text;
+    color: #485264;
+    font-family: @secondary-font-family;
+    margin-bottom: 7px;
+}
+
+.netscaler-allocated-table-row-product-name {
+    .netscaler-allocated-table-row-small-text;
+    color: #6B788B;
+    font-family: @secondary-font-family;
+
+    a {
+        .netscaler-allocated-table-row-small-text;
+        display: inline-block;
+        position: relative;
+        text-decoration: underline;
+        top: -3px;
+        font-family: @secondary-font-family;
+        left: 8px;
+    }
+}
+
+.netscaler-allocated-table-row-product-name-text {
+    .overflow-ellipsis;
+    .netscaler-allocated-table-row-small-text;
+    display: inline-block;
+    max-width: calc(100% - 20px);
+}
+
+.netscaler-allocated-table-row-status-cell {
+    min-width: 83px;
+    line-height: 0 !important;
+}
+
+.netscaler-allocated-table-row-status-icon-middle {
+    position: relative;
+    top: 11px;
+}
+
+.netscaler-allocated-table-row-status-text {
+    position: relative;
+    top: -3px;
+    left: 18px;
+}
+
+.netscaler-allocated-table-row-status-text-middle {
+    top: 8px;
+}
+
+.netscaler-allocated-table-row-status-message {
+    text-decoration: underline;
+    font-size: 12px;
+    position: relative;
+    left: 18px;
+    top: 19px;
+    display: block;
+}

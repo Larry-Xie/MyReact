@@ -1,0 +1,55 @@
+// Copyright © Citrix Systems, Inc.  All rights reserved.
+
+@import '../../common/theme-default.less';
+
+.xaxd-status-table-cell-tooltip {
+    max-height: 130px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background-color: #8892A9;
+    }
+}
+
+.xaxd-status-table-host-cell-message {
+    line-height: 1;
+    position: relative;
+    top: -20px;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.xaxd-status-table-host-cell-tooltip-item {
+    margin-top: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 120px;
+    font-family: @primary-font-family;
+    font-size: 13px;
+
+    a {
+        color: #fff;
+        position: inherit !important;
+    }
+}
+
+.__react_component_tooltip {
+    line-height: 1.42857143;
+    font-size: 14px !important;
+    padding: 9px 14px !important;
+    border-radius: 5px !important;
+}
+
+.__react_component_tooltip.type-dark {
+    background-color: #4A5165 !important;
+}
+
+.__react_component_tooltip.type-dark.place-bottom:after {
+    border-bottom-color: #4A5165 !important;
+}

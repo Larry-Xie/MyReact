@@ -1,0 +1,7 @@
+// Copyright © Citrix Systems, Inc.  All rights reserved.
+
+export const DETAIL_GET_FQDN = 'DETAIL_GET_FQDN';
+export const DETAIL_LICENSE_SERVER_TYPE_CHANGED = 'DETAIL_LICENSE_SERVER_TYPE_CHANGED';
+export const DETAIL_REQUEST_DATA = 'DETAIL_REQUEST_DATA';
+export const DETAIL_RECEIVE_DATA = 'DETAIL_RECEIVE_DATA';
+export const DETAIL_SORT = 'DETAIL_SORT';

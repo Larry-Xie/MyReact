@@ -1,0 +1,80 @@
+// Copyright © Citrix Systems, Inc.  All rights reserved.
+
+.lui-switch-button-container {
+    position: relative;
+    width: 90px;
+    margin-top: 13px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.lui-switch-button-checkbox {
+    display: none;
+}
+
+.lui-switch-button-border {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #E9E9EA;
+    border-radius: 20px;
+    position: relative;
+}
+
+.lui-switch-button-inner-text {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.lui-switch-button-inner-text:before,
+.lui-switch-button-inner-text:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.lui-switch-button-inner-text:before {
+    content: 'Free';
+    padding-left: 10px;
+    color: #74B75A;
+}
+
+.lui-switch-button-inner-text:after {
+    content: 'Paid';
+    padding-right: 10px;
+    color: #7E9FA8;
+    text-align: right;
+}
+
+.lui-switch-button-inner-switch {
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    display: block;
+    margin: 6px;
+    background: #7E9FA8;
+    position: absolute;
+    top: -3px;
+    right: 50px;
+    border: none;
+    transition: all 0.3s ease-in 0s;
+}
+
+.lui-switch-button-checkbox:checked + .lui-switch-button-border .lui-switch-button-inner-text {
+    margin-left: 0;
+}
+
+.lui-switch-button-checkbox:checked + .lui-switch-button-border .lui-switch-button-inner-switch {
+    right: 0;
+    background: #74B75A;
+}

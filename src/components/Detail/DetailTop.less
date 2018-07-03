@@ -1,0 +1,143 @@
+// Copyright © Citrix Systems, Inc.  All rights reserved.
+
+@import '../../common/theme-default.less';
+
+.detail-top-container {
+    width: 100%;
+    padding-top: 24px;
+    background: @white;
+    display: inline-block;
+    border-bottom: 1px solid @detail-divider-color;
+    margin-bottom: 32px;
+    padding-right: 90px;
+    min-height: 70px;
+    letter-spacing: -0.01em;
+    color: @detail-word-color;
+    font-family: @primary-font-family;
+}
+
+.detail-top-title {
+    padding-left: 26px;
+}
+
+.detail-top-title-name {
+    margin-left: 28px;
+    font-size: 24px;
+    font-family: @secondary-font-family;
+    line-height: 21.6px;
+}
+
+.detail-top-left {
+    padding: 32px 56px 0 0;
+    float: left;
+    margin-left: 90px;
+}
+
+.detail-top-number {
+    margin-bottom: 12px;
+    font-size: 32px;
+    line-height: 1.2em;
+}
+
+.detail-top-number-icon {
+    margin-right: 16px;
+}
+
+.detail-top-install {
+    font-size: 14px;
+    line-height: 21.6px;
+}
+
+.detail-top-vertical-line {
+    width: 1px;
+    height: 72px;
+    float: left;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    border-right: solid 1px @detail-divider-color;
+}
+
+.detail-top-middle {
+    padding: 32px 0 0 16px;
+    float: left;
+}
+
+.detail-top-subtitle {
+    font-size: 14px;
+    letter-spacing: 0;
+    color: @detail-column-title;
+    float: left;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+
+.detail-top-content {
+    font-size: 14px;
+    font-family: @secondary-font-family;
+    letter-spacing: 0;
+    float: left;
+    margin-right: 56px;
+    max-width: 200px;
+}
+
+.detail-top-item {
+    margin-bottom: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.detail-top-right {
+    padding: 32px 0 0 16px;
+    float: left;
+}
+
+.detail-top-right-narrow {
+    .detail-top-right;
+    display: none !important;
+}
+
+.detail-top-horizontal-line {
+    display: none;
+}
+
+@media (max-width: 879px) {
+    .detail-top-right-narrow {
+        display: inline-block !important;
+        padding-left: 48px !important;
+    }
+
+    .detail-top-right {
+        display: none;
+    }
+
+    .detail-top-left {
+        display: inline-block;
+        padding: 32px 48px 0 0;
+        margin-left: calc(~'50% - 117px');
+    }
+
+    .detail-top-vertical-line {
+        margin-bottom: 16px;
+    }
+
+    .detail-top-horizontal-line {
+        display: inline-block;
+        height: 1px;
+        margin: 0 72px;
+        width: calc(~'100% - 54px');
+        border-top: solid 1px @detail-divider-color;
+    }
+
+    .detail-top-middle {
+        display: inline-block;
+        padding: 24px 0;
+        margin-left: calc(~'50% - 60px');
+    }
+
+    .detail-top-vertical-line-narrow {
+        display: none !important;
+    }
+}
